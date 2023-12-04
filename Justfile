@@ -1,0 +1,2 @@
+reload: 
+    ./bin/build
