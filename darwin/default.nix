@@ -54,6 +54,12 @@ let user = "evansmith"; in
     StandardOutPath = "/tmp/emacs.out.log";
   };
 
+  networking = {
+    computerName = "arthur-the-tiny";
+    hostName = "arthur-the-tiny";
+    localHostName = "arthur-the-tiny";
+  };
+
   system = {
     stateVersion = 4;
 
@@ -66,6 +72,17 @@ let user = "evansmith"; in
         AppleShowAllExtensions = true;
         ApplePressAndHoldEnabled = false;
 
+        # System - Expand save panel by default
+        NSNavPanelExpandedStateForSaveMode = true;
+        # System - Increase window resize speed for Cocoa applications
+        NSWindowResizeTime = 0.001;
+        # System - Disable auto-correct
+        NSAutomaticSpellingCorrectionEnabled = false;
+        # System - Disable smart quotes (not useful when writing code)
+        NSAutomaticQuoteSubstitutionEnabled = false;
+        # System - Disable smart dashes (not useful when writing code)
+        NSAutomaticDashSubstitutionEnabled = false;
+
         # 120, 90, 60, 30, 12, 6, 2
         KeyRepeat = 2;
 
@@ -77,27 +94,39 @@ let user = "evansmith"; in
         "com.apple.sound.beep.feedback" = 0;
       };
 
+
       dock = {
         autohide = false;
         show-recents = false;
         launchanim = true;
         orientation = "bottom";
-        tilesize = 48;
+        tilesize = 60;
       };
 
       finder = {
         _FXShowPosixPathInTitle = false;
+        AppleShowAllFiles = true;
+        # Finder - Disable the warning when changing a file extension
+        FXEnableExtensionChangeWarning = false;
+        # Finder - Allow quitting via COMMAND+Q -- Doing so will also hide desktop icons
+        QuitMenuItem = true;
       };
 
       trackpad = {
         Clicking = true;
         TrackpadThreeFingerDrag = true;
       };
+
+      screensaver = {
+        askForPassword = true;
+        askForPasswordDelay = 0;
+      };
     };
+
 
     keyboard = {
       enableKeyMapping = true;
-      remapCapsLockToControl = true;
+      remapCapsLockToEscape = true;
     };
   };
 }
