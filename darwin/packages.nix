@@ -8,6 +8,7 @@ with pkgs; [
   coreutils
   killall
   mas
+  just
 
   # Encryption and security tools
   age
