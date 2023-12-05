@@ -82,6 +82,7 @@ let name = "Evan";
     userSettings = {
       terminal.integrated.fontFamily = "MesloLGS NF";
       workbench.colorTheme = "Stylix";
+      git.enableSmartCommit = true;
     };
 
     extensions = with pkgs.vscode-extensions; [
