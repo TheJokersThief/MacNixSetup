@@ -60,7 +60,7 @@ let name = "Evan";
 
   git = {
     enable = true;
-    ignores = [ "*.swp" ];
+    ignores = [ "*.swp" ".DS_Store" ];
     userName = name;
     userEmail = email;
     lfs = {
@@ -87,6 +87,7 @@ let name = "Evan";
       terminal.integrated.fontFamily = "MesloLGS NF";
       workbench.colorTheme = "Stylix";
       git.enableSmartCommit = true;
+      git.confirmSync = false;
     };
 
     extensions = with pkgs.vscode-extensions; [
