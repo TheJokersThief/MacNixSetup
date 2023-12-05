@@ -15,6 +15,11 @@
   "steam"
   "vlc"
 
+  # Utilities
+  "shottr"
+  "scroll-reverser"
+  "rectangle"
+
   # Misc
   "1password"
 ]
