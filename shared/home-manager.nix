@@ -5,6 +5,7 @@ let name = "Evan";
     email = "me@iamevan.me"; in
 {
   # Shared shell configuration
+  
   zsh.enable = true;
   zsh.autocd = false;
   zsh.plugins = [
@@ -19,6 +20,12 @@ let name = "Evan";
         file = "p10k.zsh";
     }
   ];
+
+  zsh.oh-my-zsh = {
+    enable = true;
+    # theme = "powerlevel10k/powerlevel10k";
+    plugins = ["git" "fzf" "gcloud" "helm" "kubectx" "autojump"];
+  };
   zsh.initExtraFirst = ''
     if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
       . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
@@ -38,10 +45,6 @@ let name = "Evan";
     export ALTERNATE_EDITOR=""
     export EDITOR="emacsclient -t"
     export VISUAL="emacsclient -c -a emacs"
-
-    e() {
-        emacsclient -t "$@"
-    }
 
     # nix shortcuts
     shell() {
@@ -72,6 +75,21 @@ let name = "Evan";
       pull.rebase = true;
       rebase.autoStash = true;
     };
+  };
+
+  vscode = {
+    enable = true;
+    userSettings = {
+      terminal.integrated.fontFamily = "MesloLGS NF";
+      workbench.colorTheme = "Stylix";
+    };
+
+    extensions = with pkgs.vscode-extensions; [
+      yzhang.markdown-all-in-one
+      bbenoist.nix
+      # ms-vscode.remote-explorer
+      skellock.just
+    ];
   };
 
   vim = {
@@ -256,15 +274,17 @@ let name = "Evan";
       ''
         Host github.com
           Hostname github.com
+          AddKeysToAgent yes
           IdentitiesOnly yes
+          UseKeychain yes
       ''
       (lib.mkIf pkgs.stdenv.hostPlatform.isLinux
         ''
-          IdentityFile /home/${user}/.ssh/id_github
+          IdentityFile /home/${user}/.ssh/id_ed25519
         '')
       (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
         ''
-          IdentityFile /Users/${user}/.ssh/id_github
+          IdentityFile /Users/${user}/.ssh/id_ed25519
         '')
     ];
   };
