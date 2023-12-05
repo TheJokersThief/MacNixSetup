@@ -46,7 +46,15 @@ with pkgs; [
   tmux
   unrar
   unzip
+  fzf
+  oh-my-zsh
+  zsh-completions
   zsh-powerlevel10k
+  kubernetes-helm
+  google-cloud-sdk
+  kubectx
+  autojump
+  
 
   # Python packages
   python39
