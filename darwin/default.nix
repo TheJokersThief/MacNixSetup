@@ -59,6 +59,10 @@ let user = "evansmith"; in
     hostName = "arthur-the-tiny";
     localHostName = "arthur-the-tiny";
   };
+  
+  # environment = {
+  #   loginShell = "/bin/zsh";
+  # };
 
   system = {
     stateVersion = 4;
@@ -100,7 +104,7 @@ let user = "evansmith"; in
         show-recents = false;
         launchanim = true;
         orientation = "bottom";
-        tilesize = 60;
+        tilesize = 30;
       };
 
       finder = {
