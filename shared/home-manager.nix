@@ -57,9 +57,9 @@ let name = "Evan";
     alias ls='ls --color=auto'
   '' 
     + (builtins.readFile ../configs/aliases.zsh )
-    + (builtins.readFile ../configs/git.zsh )
-    
+    + (builtins.readFile ../configs/git.zsh ) 
   ;
+
 
   git = {
     enable = true;
