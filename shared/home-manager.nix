@@ -41,10 +41,9 @@ let name = "Evan";
     # Remove history data we don't want to see
     export HISTIGNORE="pwd:ls:cd"
 
-    # Emacs is my editor
-    export ALTERNATE_EDITOR=""
-    export EDITOR="emacsclient -t"
-    export VISUAL="emacsclient -c -a emacs"
+    export ALTERNATE_EDITOR="nano"
+    export EDITOR="vim"
+    export VISUAL="vim"
 
     # nix shortcuts
     shell() {
@@ -56,7 +55,11 @@ let name = "Evan";
 
     # Always color ls and group directories
     alias ls='ls --color=auto'
-  '';
+  '' 
+    + (builtins.readFile ../configs/aliases.zsh )
+    + (builtins.readFile ../configs/git.zsh )
+    
+  ;
 
   git = {
     enable = true;
@@ -88,6 +91,7 @@ let name = "Evan";
       workbench.colorTheme = "Stylix";
       git.enableSmartCommit = true;
       git.confirmSync = false;
+      explorer.confirmDelete = false;
     };
 
     extensions = with pkgs.vscode-extensions; [
