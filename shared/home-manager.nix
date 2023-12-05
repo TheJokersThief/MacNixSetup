@@ -77,6 +77,10 @@ let name = "Evan";
     };
   };
 
+  go = {
+    enable = true;
+  };
+
   vscode = {
     enable = true;
     userSettings = {
