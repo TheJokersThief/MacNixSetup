@@ -50,6 +50,11 @@ let name = "Evan";
         nix-shell '<nixpkgs>' -A "$1"
     }
 
+    # alacritty
+    new() {
+      alacritty msg create-window
+    }
+
     # Use difftastic, syntax-aware diffing
     alias diff=difft
 
@@ -240,7 +245,7 @@ let name = "Evan";
      };
 
   alacritty = {
-    enable = false;
+    enable = true;
     settings = {
       cursor = {
         style = "Block";
@@ -261,7 +266,7 @@ let name = "Evan";
         };
         size = lib.mkMerge [
           (lib.mkIf pkgs.stdenv.hostPlatform.isLinux 10)
-          (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin 14)
+          (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin 12)
         ];
       };
 
