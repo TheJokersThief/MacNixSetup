@@ -12,6 +12,7 @@ It's based on a starter template from https://github.com/dustinlyons/nixos-confi
     - [4. Apply config](#4-apply-config)
     - [5. Extras](#5-extras)
       - [Fonts](#fonts)
+      - [Software](#software)
 
 
 ### 1. Install dependencies
@@ -50,3 +51,7 @@ bash ./bin/apply
 
 * [MesloLFG NF](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
 * [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
+
+#### Software
+
+* [Apple Juice](https://github.com/raphaelhanneken/apple-juice/releases) – Better battery icon
