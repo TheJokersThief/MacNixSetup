@@ -87,11 +87,28 @@ let name = "Evan";
   vscode = {
     enable = true;
     userSettings = {
-      terminal.integrated.fontFamily = "MesloLGS NF";
-      workbench.colorTheme = "Material Theme Darker";
-      git.enableSmartCommit = true;
-      git.confirmSync = false;
+      editor.fontFamily = "'IBM Plex Mono', Menlo, Monaco, 'Courier New', monospace";
+      editor.rules = [ 80 120 ];
+      editor.wordWrap = "on";
+
       explorer.confirmDelete = false;
+      explorer.confirmDragAndDrop = false;
+
+      git.autoFetch = true;
+      git.confirmSync = false;
+      git.enableSmartCommit = true;
+
+      terminal.integrated.enableMultiLinePasteWarning = false;
+      terminal.integrated.fontFamily = "'Source Code Pro for Powerline', 'Hack'";
+      workbench.colorTheme = "Material Theme Darker";
+
+      diffEditor.ignoreTrimWhitespace = false;
+      go.toolsManagement.autoUpdate = true;
+      redhat.telemetry.enabled = false;
+
+      "[python]" = { "editor.formatOnType" = true; };
+      "[terraform-vars]" = { editor.formatOnSave = true; };
+      "[terraform]" = { editor.formatOnSave = true; };
     };
 
     extensions = with pkgs.vscode-extensions; [

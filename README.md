@@ -33,3 +33,13 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 ```sh
 bash ./bin/apply
 ```
+
+
+### 5. Extras
+
+#### Fonts
+
+* [Source Code Pro for Powerline](https://github.com/powerline/fonts/tree/master)
+* [Hack](https://sourcefoundry.org/hack/)
+* [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
+* 
