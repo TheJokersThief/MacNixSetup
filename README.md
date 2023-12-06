@@ -5,6 +5,15 @@ This is a Nix-based setup for my Mac development environment.
 It's based on a starter template from https://github.com/dustinlyons/nixos-config
 
 
+- [Evan's Mac setup](#evans-mac-setup)
+    - [1. Install dependencies](#1-install-dependencies)
+    - [2. Clone repo](#2-clone-repo)
+    - [3. Install Nix](#3-install-nix)
+    - [4. Apply config](#4-apply-config)
+    - [5. Extras](#5-extras)
+      - [Fonts](#fonts)
+
+
 ### 1. Install dependencies
 
 **xcode:**
@@ -39,7 +48,5 @@ bash ./bin/apply
 
 #### Fonts
 
-* [Source Code Pro for Powerline](https://github.com/powerline/fonts/tree/master)
-* [Hack](https://sourcefoundry.org/hack/)
+* [MesloLFG NF](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
 * [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
-* 

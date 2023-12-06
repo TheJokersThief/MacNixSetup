@@ -99,7 +99,7 @@ let name = "Evan";
       git.enableSmartCommit = true;
 
       terminal.integrated.enableMultiLinePasteWarning = false;
-      terminal.integrated.fontFamily = "'Source Code Pro for Powerline', 'Hack'";
+      terminal.integrated.fontFamily = "MesloLGS NF";
       workbench.colorTheme = "Material Theme Darker";
 
       diffEditor.ignoreTrimWhitespace = false;
@@ -111,11 +111,21 @@ let name = "Evan";
       "[terraform]" = { editor.formatOnSave = true; };
     };
 
+    mutableExtensionsDir = true;
     extensions = with pkgs.vscode-extensions; [
-      yzhang.markdown-all-in-one
       bbenoist.nix
-      # ms-vscode.remote-explorer
+      eamodio.gitlens
+      golang.go
+      hashicorp.terraform
+      ms-azuretools.vscode-docker
+      ms-python.python
       skellock.just
+      tamasfe.even-better-toml
+      yzhang.markdown-all-in-one
+
+      # Don't yet exist
+      # huntertran.auto-markdown-toc
+      # ms-vscode.remote-explorer
     ];
   };
 
