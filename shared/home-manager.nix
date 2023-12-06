@@ -119,6 +119,7 @@ let name = "Evan";
       hashicorp.terraform
       ms-azuretools.vscode-docker
       ms-python.python
+      redhat.vscode-yaml
       skellock.just
       tamasfe.even-better-toml
       yzhang.markdown-all-in-one
