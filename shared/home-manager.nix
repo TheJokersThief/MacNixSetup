@@ -125,7 +125,6 @@ let name = "Evan";
       yzhang.markdown-all-in-one
 
       # Don't yet exist
-      # huntertran.auto-markdown-toc
       # ms-vscode.remote-explorer
     ];
   };
