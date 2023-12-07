@@ -1,0 +1,54 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # Dates
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d/%m/%Y"
+  - trigger: ":timestamp"
+    replace: "{{timestamp}}"
+    vars:
+      - name: timestamp
+        type: date
+        params: 
+          format: "%H:%M"
+
+  # Custom emojis
+  - trigger: "<3"
+    replace: "💖"
+  - trigger: ":L"
+    replace: "😂"
+  - trigger: ":P"
+    replace: "😛"
+  - trigger: ":**"
+    replace: "😍"
+  - trigger: ":*"
+    replace: "😘"
+  - trigger: "^^"
+    replace: "😄"
+  - trigger: ":triumph"
+    replace: "😤"
+  - trigger: ";P"
+    replace: "😜"
+  - trigger: ":think"
+    replace: "🤔"
+  - trigger: ":')"
+    replace: "😅"
+  - trigger: ":eyes"
+    replace: "👀"
+  - trigger: ":hand"
+    replace: "✋"

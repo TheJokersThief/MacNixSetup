@@ -55,3 +55,4 @@ bash ./bin/apply
 #### Software
 
 * [Apple Juice](https://github.com/raphaelhanneken/apple-juice/releases) – Better battery icon
+* [espanso](https://espanso.org/install/) – Text expander

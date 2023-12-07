@@ -13,4 +13,8 @@ let
   "${config.users.users.${user}.home}/Downloads/Useful/blank-file" = {
     text = "";
   };
+
+  "${config.users.users.${user}.home}/Library/Application Support/espanso/match/extra.yml" = {
+    text = builtins.readFile ../configs/espanso-matches.yaml;
+  };
 }
