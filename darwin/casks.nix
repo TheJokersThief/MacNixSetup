@@ -22,4 +22,5 @@
 
   # Misc
   "1password"
+  "numi"
 ]

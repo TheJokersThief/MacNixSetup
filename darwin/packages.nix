@@ -54,7 +54,7 @@ with pkgs; [
   google-cloud-sdk
   kubectx
   autojump
-  
+
 
   # Python packages
   python39
