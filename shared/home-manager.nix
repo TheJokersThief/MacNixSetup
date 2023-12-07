@@ -70,6 +70,14 @@ let name = "Evan";
     };
   };
 
+  # firefox = {
+  #   enable = true;
+  #   policies = {
+  #     BlockAboutConfig = false;
+  #     DefaultDownloadDirectory = "\${home}/Downloads/One-Use";
+  #   };
+  # };
+
   git = {
     enable = true;
     ignores = [ "*.swp" ".DS_Store" ];
