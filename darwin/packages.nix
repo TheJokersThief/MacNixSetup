@@ -57,6 +57,7 @@ with pkgs; [
 
 
   # Python packages
-  python39
+  python313
+  poetry
   # python39Packages.poetry
 ]
