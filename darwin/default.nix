@@ -94,7 +94,7 @@ in
         show-recents = false;
         launchanim = true;
         orientation = "bottom";
-        tilesize = 60;
+        tilesize = 45;
       };
 
       finder = {

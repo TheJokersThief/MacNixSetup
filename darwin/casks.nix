@@ -24,4 +24,5 @@
   "1password"
   "numi"
   "obsidian"
+  "google-drive"
 ]
