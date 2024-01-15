@@ -20,6 +20,7 @@ It's based on a starter template from https://github.com/dustinlyons/nixos-confi
 **xcode:**
 ```sh
 xcode-select --install
+softwareupdate --install-rosetta --agree-to-license
 ```
 
 **git:**

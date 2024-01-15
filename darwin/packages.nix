@@ -9,6 +9,7 @@ with pkgs; [
   killall
   mas
   just
+  colima
 
   # Encryption and security tools
   age
