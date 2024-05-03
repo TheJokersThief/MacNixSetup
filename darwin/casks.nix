@@ -19,6 +19,7 @@
   "shottr"
   "scroll-reverser"
   "rectangle"
+  "zerotier-one"
 
   # Misc
   "1password"
