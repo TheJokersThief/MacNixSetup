@@ -6,6 +6,7 @@ with pkgs; [
   bat
   btop
   coreutils
+  dust
   eza
   killall
   mas
