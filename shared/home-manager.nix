@@ -385,6 +385,12 @@ let name = "Evan";
     # theme = "powerlevel10k/powerlevel10k";
     plugins = ["git" "fzf" "gcloud" "helm" "kubectx" "autojump"];
   };
+  zsh.shellAliases = {
+    cat = "bat";
+    ls = "eza";
+    du = "dust";
+    tf = "terraform";
+  };
   zsh.initExtraFirst = ''
     if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
       . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
@@ -416,11 +422,7 @@ let name = "Evan";
 
     # Use difftastic, syntax-aware diffing
     alias diff=difft
-
-    # Always color ls and group directories
-    alias ls='ls --color=auto'
   '' 
-    + (builtins.readFile ../configs/aliases.zsh )
     + (builtins.readFile ../configs/git.zsh ) 
   ;
 }
