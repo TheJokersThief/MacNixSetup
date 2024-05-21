@@ -26,4 +26,5 @@
   "numi"
   "obsidian"
   "google-drive"
+  "notunes" # Don't open itunes, ever
 ]
