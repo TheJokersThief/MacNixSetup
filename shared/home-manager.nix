@@ -423,6 +423,7 @@ let name = "Evan";
     # Use difftastic, syntax-aware diffing
     alias diff=difft
   '' 
+    + (builtins.readFile ../configs/system.zsh ) 
     + (builtins.readFile ../configs/git.zsh ) 
   ;
 }
