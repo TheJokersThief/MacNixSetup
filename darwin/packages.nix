@@ -12,6 +12,7 @@ with pkgs; [
   mas
   just
   colima
+  rclone
 
   # Encryption and security tools
   age
