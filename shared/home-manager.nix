@@ -6,7 +6,7 @@ let name = "Evan";
 {
 
   alacritty = {
-    enable = true;
+    enable = false;
     settings = {
       cursor = {
         style = "Block";

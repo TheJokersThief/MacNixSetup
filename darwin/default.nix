@@ -43,7 +43,7 @@ in
   ] ++ (import ../shared/packages.nix { inherit pkgs; });
 
   # Enable fonts dir
-  fonts.fontDir.enable = true;
+  #fonts.fontDir.enable = true;
 
   networking = {
     computerName = machine_name;
