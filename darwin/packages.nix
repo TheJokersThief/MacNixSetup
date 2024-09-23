@@ -19,7 +19,7 @@ with pkgs; [
   age-plugin-yubikey
   gnupg
   libfido2
-  pinentry
+  # pinentry
   yubikey-manager
 
   # Cloud-related tools and SDKs
@@ -36,9 +36,11 @@ with pkgs; [
   ffmpeg
 
   # Node.js development tools
+  biome
   nodePackages.nodemon
   nodePackages.prettier
-  nodePackages.npm # globally install npm
+  nodePackages.npm
+  nodePackages.pnpm
   nodejs
 
   # Text and terminal utilities
@@ -48,7 +50,7 @@ with pkgs; [
   ripgrep
   tree
   tmux
-  unrar
+  # unrar
   unzip
   fzf
   oh-my-zsh

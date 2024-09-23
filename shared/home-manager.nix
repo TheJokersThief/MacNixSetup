@@ -6,7 +6,7 @@ let name = "Evan";
 {
 
   alacritty = {
-    enable = false;
+    enable = true;
     settings = {
       cursor = {
         style = "Block";
@@ -29,14 +29,6 @@ let name = "Evan";
           (lib.mkIf pkgs.stdenv.hostPlatform.isLinux 10)
           (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin 12)
         ];
-      };
-
-      dynamic_padding = true;
-      decorations = "full";
-      title = "Terminal";
-      class = {
-        instance = "Alacritty";
-        general = "Alacritty";
       };
 
       colors = {

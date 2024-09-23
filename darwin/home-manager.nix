@@ -18,7 +18,7 @@ in
     shell = pkgs.zsh;
   };
 
-  homebrew.enable = false;
+  homebrew.enable = true;
   homebrew.casks = pkgs.callPackage ./casks.nix {};
 
   # These app IDs are from using the mas CLI app
