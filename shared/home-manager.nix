@@ -332,6 +332,7 @@ let name = "Evan";
       diffEditor.ignoreTrimWhitespace = false;
       go.toolsManagement.autoUpdate = true;
       redhat.telemetry.enabled = false;
+      typescript.updateImportsOnFileMove.enabled = "always";
 
       "[python]" = { "editor.formatOnType" = true; };
       "[terraform-vars]" = { editor.formatOnSave = true; };
@@ -415,7 +416,7 @@ let name = "Evan";
     # Use difftastic, syntax-aware diffing
     alias diff=difft
   '' 
-    + (builtins.readFile ../configs/system.zsh ) 
-    + (builtins.readFile ../configs/git.zsh ) 
+    + (builtins.readFile ../configs/system.zsh ) + "\n"
+    + (builtins.readFile ../configs/git.zsh ) + "\n"
   ;
 }

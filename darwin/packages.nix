@@ -67,4 +67,8 @@ with pkgs; [
   python311Packages.pip
   poetry
   # python39Packages.poetry
+
+
+  quicktype
+  difftastic
 ]
