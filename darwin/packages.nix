@@ -50,7 +50,7 @@ with pkgs; [
   ripgrep
   tree
   tmux
-  # unrar
+  unrar
   unzip
   fzf
   oh-my-zsh
