@@ -60,12 +60,12 @@ with pkgs; [
   google-cloud-sdk
   kubectx
   autojump
+  sqlite
 
 
   # Python packages
-  python311
-  python311Packages.pip
-  poetry
+  # (python311.withPackages(ps: with ps; [ pymobiledevice3 bpylist2 rich requests click ]))
+  # poetry
   # python39Packages.poetry
 
 
