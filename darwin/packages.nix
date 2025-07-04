@@ -71,4 +71,6 @@ with pkgs; [
 
   quicktype
   difftastic
+  pyenv
+  websocat
 ]
