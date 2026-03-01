@@ -73,15 +73,15 @@ let name = "Evan";
   git = {
     enable = true;
     ignores = [ "*.swp" ".DS_Store" ];
-    userName = name;
-    userEmail = email;
-    lfs = {
-      enable = true;
-    };
-    extraConfig = {
+    lfs.enable = true;
+    settings = {
+      user = {
+        name = name;
+        email = email;
+      };
       init.defaultBranch = "main";
-      core = { 
-	    editor = "vim";
+      core = {
+        editor = "vim";
         autocrlf = "input";
       };
       pull.rebase = true;
@@ -95,24 +95,21 @@ let name = "Evan";
 
   ssh = {
     enable = true;
-
-    extraConfig = lib.mkMerge [
-      ''
-        Host github.com
-          Hostname github.com
-          AddKeysToAgent yes
-          IdentitiesOnly yes
-          UseKeychain yes
-      ''
-      (lib.mkIf pkgs.stdenv.hostPlatform.isLinux
-        ''
-          IdentityFile /home/${user}/.ssh/id_ed25519
-        '')
-      (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
-        ''
-          IdentityFile /Users/${user}/.ssh/id_ed25519
-        '')
-    ];
+    enableDefaultConfig = false;
+    matchBlocks."*" = {
+      addKeysToAgent = "yes";
+      identitiesOnly = true;
+    };
+    matchBlocks."github.com" = {
+      hostname = "github.com";
+      addKeysToAgent = "yes";
+      identitiesOnly = true;
+    } // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
+      identityFile = "/Users/${user}/.ssh/id_ed25519";
+      extraOptions = { UseKeychain = "yes"; };
+    } // lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
+      identityFile = "/home/${user}/.ssh/id_ed25519";
+    };
   };
 
   tmux = {
@@ -313,7 +310,9 @@ let name = "Evan";
 
   vscode = {
     enable = true;
-    userSettings = {
+    mutableExtensionsDir = true;
+    profiles.default = {
+      userSettings = {
       editor.fontFamily = "'IBM Plex Mono', Menlo, Monaco, 'Courier New', monospace";
       editor.rules = [ 80 120 ];
       editor.wordWrap = "on";
@@ -338,8 +337,6 @@ let name = "Evan";
       "[terraform-vars]" = { editor.formatOnSave = true; };
       "[terraform]" = { editor.formatOnSave = true; };
     };
-
-    mutableExtensionsDir = true;
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
       eamodio.gitlens
@@ -354,7 +351,8 @@ let name = "Evan";
 
       # Don't yet exist
       # ms-vscode.remote-explorer
-    ];
+      ];
+    };
   };
 
 
@@ -384,7 +382,8 @@ let name = "Evan";
     du = "dust";
     tf = "terraform";
   };
-  zsh.initExtraFirst = ''
+  zsh.initContent = lib.mkBefore (
+    ''
     if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
       . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
       . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
@@ -415,8 +414,8 @@ let name = "Evan";
 
     # Use difftastic, syntax-aware diffing
     alias diff=difft
-  '' 
-    + (builtins.readFile ../configs/system.zsh ) + "\n"
-    + (builtins.readFile ../configs/git.zsh ) + "\n"
-  ;
+    ''
+    + (builtins.readFile ../configs/system.zsh) + "\n"
+    + (builtins.readFile ../configs/git.zsh) + "\n"
+  );
 }

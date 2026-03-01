@@ -6,7 +6,7 @@ with pkgs; [
   bat
   btop
   coreutils
-  du-dust
+  dust
   eza
   killall
   mas
@@ -36,12 +36,12 @@ with pkgs; [
   ffmpeg
 
   # Node.js development tools
+  # nodejs removed - nodePackages.* include it; explicit nodejs caused buildEnv conflicts
   biome
   nodePackages.nodemon
   nodePackages.prettier
   nodePackages.npm
   nodePackages.pnpm
-  nodejs
 
   # Text and terminal utilities
   htop
@@ -73,4 +73,5 @@ with pkgs; [
   difftastic
   pyenv
   websocat
+  wakeonlan
 ]

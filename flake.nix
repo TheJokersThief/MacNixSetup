@@ -10,7 +10,7 @@
     #
     # Change the flake input
     # - Official repository
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # 
     # Remove this setting and retry builds if they sometimes timeout:
     # - NixOS configuration
@@ -31,8 +31,7 @@
 
     home-manager.url = "github:nix-community/home-manager";
     darwin = {
-      url = "github:LnL7/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-darwin/nix-darwin/master";
     };
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";

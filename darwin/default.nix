@@ -6,14 +6,14 @@ let
 in
 {
 
+  # Match existing Nix installation's nixbld GID (350 vs default 30000)
+  ids.gids.nixbld = 350;
+
   imports = [
     ./home-manager.nix
     ../shared
     ../shared/cachix
   ];
-
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
 
   # Setup user, packages, programs
   nix = {
@@ -21,7 +21,6 @@ in
     settings.trusted-users = [ "@admin" "${user}" ];
 
     gc = {
-      user = "root";
       automatic = true;
       interval = { Weekday = 0; Hour = 2; Minute = 0; };
       options = "--delete-older-than 30d";
@@ -55,8 +54,14 @@ in
   #   loginShell = "/bin/zsh";
   # };
 
+  # Ensure Homebrew dirs exist before nix-homebrew runs (avoids mkdir failure)
+  system.activationScripts.ensureHomebrewDirs = ''
+    mkdir -p /opt/homebrew/Library/Taps
+  '';
+
   system = {
     stateVersion = 4;
+    primaryUser = user;
 
     defaults = {
       LaunchServices = {
