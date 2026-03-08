@@ -74,4 +74,5 @@ with pkgs; [
   pyenv
   websocat
   wakeonlan
+  gopls
 ]

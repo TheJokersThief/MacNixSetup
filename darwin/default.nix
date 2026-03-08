@@ -54,11 +54,6 @@ in
   #   loginShell = "/bin/zsh";
   # };
 
-  # Ensure Homebrew dirs exist before nix-homebrew runs (avoids mkdir failure)
-  system.activationScripts.ensureHomebrewDirs = ''
-    mkdir -p /opt/homebrew/Library/Taps
-  '';
-
   system = {
     stateVersion = 4;
     primaryUser = user;
